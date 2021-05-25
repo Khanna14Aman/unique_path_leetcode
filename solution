@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int uniquePaths(int m, int n) {
+        int i;
+        int long long num =1,den =1,ans;
+        int a = m+n-2;
+        int b = min(m-1,n-1);
+        int mod = 1e9+7;
+        for(i=1;i<=b;i++)
+        {
+            num = num*(a-i+1);        //here multiply can cross the limit of int that is 1e9 that is why we need int long long 
+            den = den*i;
+        }
+        ans =(num/den);
+        ans =(int) ans;              // In question it is mentioned that ans will be inside the limit of integer and return type is also int type so converted into integer from int longlong
+        return ans;
+        
+    }
+};
